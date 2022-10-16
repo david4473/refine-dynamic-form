@@ -8,7 +8,9 @@ import {
 import "@pankod/refine-antd/dist/styles.min.css";
 import routerProvider from "@pankod/refine-react-router-v6";
 import dataProvider from "@pankod/refine-simple-rest";
-import create from "pages/create";
+import PostCreate from "pages/PostCreate";
+import PostEdit from "pages/PostEdit";
+import PostList from "pages/PostList";
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
       dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
       resources={[
         {
-          name: "posts",
-          list: create,
+          name: "users",
+          list: PostList,
+          create: PostCreate,
+          edit: PostEdit,
         },
       ]}
     />
